@@ -7,7 +7,7 @@ void setup() {
   pinMode(led_kuning, OUTPUT);
   pinMode(led_hijau, OUTPUT);
   
-
+//ubtuk monitoring 
  Serial.begin(19200);
 }
 
@@ -19,17 +19,30 @@ void loop() {
     Serial.println(perintah);
 
     //ketik 1 menyalakan lampu merah
-    if (perintah == '1'){
+    if (perintah == '1') {
       digitalWrite(led_merah, HIGH);
     }
 
     //ketik 2 menyalakan lampu kuning
-    else if (perintah == `2`){
+    else if (perintah == '2') {
       digitalWrite(led_kuning,HIGH);
-  }
+    }
   
    //ketik 3 menyalakan lampu hijau
-   else if (perintah  == `3`){
+   else if (perintah  == '3') {
     digitalWrite(led_hijau,HIGH);
     
+    }
+    else if (perintah == '4') {
+     digitalWrite(led_merah, LOW);
+
+
+    }
+
+    else if (perintah == '5') {
+      digitalWrite(led_merah, HIGH);
+
+
+    }
+  } 
 }
