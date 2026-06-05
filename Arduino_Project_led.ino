@@ -1,11 +1,12 @@
 int led_merah = 5;
 int led_kuning = 4;
-
+int led_hijau = 3;
 
 void setup() {
   pinMode(led_merah, OUTPUT);
   pinMode(led_kuning, OUTPUT);
-
+  pinMode(led_hijau, OUTPUT);
+  
 
  Serial.begin(19200);
 }
@@ -28,7 +29,7 @@ void loop() {
   }
   
    //ketik 3 menyalakan lampu hijau
-  
-  
-
+   else if (perintah  == `3`){
+    digitalWrite(led_hijau,HIGH);
+    
 }
