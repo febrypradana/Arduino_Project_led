@@ -1,4 +1,4 @@
-# 🚀 IoT Project: Smart JS Traffic Light Control
+# 🚀 IoT Project: Smart JS control led
 
 Repositori ini berisi proyek integrasi IoT yang menghubungkan kontrol 3 buah lampu LED (Merah, Kuning, Hijau) pada mikrokontroler Arduino dengan Web Dashboard interaktif berbasis Node.js (Smart JS).
 
