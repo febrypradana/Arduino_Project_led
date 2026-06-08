@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ACM - Kontrol Warna LED</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f6f9;
+            margin: 0;
+            padding: 40px 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            box-sizing: border-box;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 400px;
+            padding: 30px;
+            border: none;
+            /* Menghilangkan border kaku */
+            border-radius: 16px;
+            background-color: #ffffff;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            /* Shadow halus */
+            text-align: center;
+        }
+
+        button {
+            font-family: inherit;
+            font-size: 14px;
+            padding: 12px 20px;
+            margin: 8px 0;
+            cursor: pointer;
+            font-weight: 600;
+            border: none;
+            border-radius: 8px;
+            color: rgb(255, 254, 254);
+            width: 100%;
+            transition: all 0.25s ease;
+            /* Transisi halus saat dihover */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        }
+
+        
+        .btn-merah {
+            background-color: #ff4d4d;
+        }
+
+        .btn-biru {
+            background-color: #eab308;
+        }
+
+        .btn-kuning {
+            background-color: #01ff16;
+            color: #1e293b;
+        }
+
+        .btn-mati {
+            background-color: #64748b;
+        }
+
+        .btn-nyala-semua {
+            background-color: #10b981;
+        }
+
+        button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+            filter: brightness(1.05);
+        }
+
+        button:active {
+            transform: translateY(0);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h2>ARDUINO CONTROL LED MANAGER</h2>
+        <p id="data" style="color: #555; font-style: italic;">Menunggu data dari Arduino...</p>
+        <hr>
+
+        <button class="btn-merah" onclick="Arduino('1')">Nyalakan Merah</button>
+        <button class="btn-biru" onclick="Arduino('2')">Nyalakan Kuning</button>
+        <button class="btn-kuning" onclick="Arduino('3')">Nyalakan Hijau</button>
+
+        <br><br>
+
+        <button class="btn-nyala-semua" onclick="Arduino('5')">Nyalakan Semua</button>
+        <button class="btn-mati" onclick="Arduino('4')">Matikan Semua</button>
+    </div>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+        const socket = io();
+
+        // Menerima data balasan dari Arduino via Node.js
+        socket.on("data", ({ data }) => {
+            let component = document.getElementById("data");
+            component.textContent = "Status Serial: " + data;
+        });
+
+        // Mengirim data perintah ke server Node.js
+        function Arduino(data) {
+            fetch("http://localhost:3000/arduinoApi", {
+                method: "POST",
+                body: JSON.stringify({ data }),
+                headers: { "Content-Type": "application/json" }
+            })
+                .then(response => {
+                    console.log("Kode perintah '" + data + "' terkirim!");
+                })
+                .catch(error => {
+                    console.error("Gagal mengirim data:", error);
+                });
+        }
+    </script>
+</body>
+
+</html>
