@@ -41,5 +41,5 @@ Program ini menerima instruksi berupa karakter/angka tunggal melalui komunikasi 
 * **Karakter `'4'`** ➡️ Mematikan **Semua LED** secara bersamaan.
 * **Karakter `'5'`** ➡️ Menyalakan **Semua LED** secara bersamaan.
 
-Setiap kali ada karakter perintah yang masuk, Arduino akan mengirimkan umpan balik ke komputer berupa teks:  
-`Menerima: [Karakter_Perintah]`
+Setiap kali ada yang diketik perintah angka yang masuk, Arduino akan mengirimkan umpan balik ke komputer berupa teks:  
+`Menerima: [perintah angka yang dimasukkan]`
