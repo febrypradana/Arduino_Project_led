@@ -31,7 +31,7 @@ Ikuti panduan berikut untuk memasukkan dan menguji program pada papan Arduino An
 
 ---
 
-## 🎮 Logika Perintah Komunikasi Serial
+##  Logika Perintah Komunikasi Serial
 
 Program ini menerima instruksi berupa karakter/angka tunggal melalui komunikasi Serial dengan kecepatan data **19200 Baud Rate**. Anda dapat mengujinya langsung lewat fitur **Serial Monitor** bawaan Arduino IDE dengan mengirimkan karakter berikut:
 
