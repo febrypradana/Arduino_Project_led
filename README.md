@@ -11,4 +11,4 @@ Sebelum mengunggah kode program, pastikan komponen elektronik pada papan Arduino
 * **LED Merah:** Hubungkan kaki Positif (Anoda) ke **Pin Digital 5** Arduino.
 * **LED Kuning:** Hubungkan kaki Positif (Anoda) ke **Pin Digital 4** Arduino.
 * **LED Hijau:** Hubungkan kaki Positif (Anoda) ke **Pin Digital 3** Arduino.
-* **GND (Ground):** Hubungkan semua kaki Negatif (Katoda) LED ke pin **GND** Arduino (Disarankan menggunakan resistor 220 Ohm pada setiap LED sebagai pengaman arus).
+* **GND (Ground):** Hubungkan semua kaki Negatif (Katoda) LED ke pin **GND** Arduino (Disarankan menggunakan resistor 100 Ohm pada setiap LED sebagai pengaman arus).
